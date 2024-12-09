@@ -6,6 +6,7 @@
 
 https://www.youtube.com/watch?v=pa-TNnUd6KI
 
+---
 
 ## 📚 Introduction  
 **PDFfy AI** is a powerful SaaS application designed to simplify note-taking and question-answering directly from your PDFs. With this app, users can upload PDFs, take notes, and even generate AI-powered answers for selected text, all in a seamless interface. Whether you’re studying, researching, or organizing your thoughts, PDFfy AI is here to make your workflow smarter and more efficient.  
