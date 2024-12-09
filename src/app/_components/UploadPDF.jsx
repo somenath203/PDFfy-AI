@@ -81,11 +81,11 @@ const UploadPDF = ({ setOpenDrawer }) => {
       setLoading(true);
 
 
-      const maxFileSizeInBytes = 5 * 1024 * 1024; 
+      const maxFileSizeInBytes = 1 * 1024 * 1024; 
 
       if (actualFileInput && actualFileInput.size > maxFileSizeInBytes) {
 
-        setPdfFileUploadErrorMsg('File size cannot be greater than 5 mb.');
+        setPdfFileUploadErrorMsg('File size cannot be greater than 1 mb.');
 
       } else if (await getNumberOfPages(actualFileInput) > 1) {
 
