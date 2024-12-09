@@ -90,7 +90,7 @@ const Page = () => {
 
       ) : (
         allPDFOfCurrentlyLoggedInUser?.length === 0 ? (
-          <Alert className="w-2/5 mt-10 border-l-4 border-orange-600 bg-orange-50 p-4 rounded-lg">
+          <Alert className="w-full lg:w-2/5 mt-10 border-l-4 border-orange-600 bg-orange-50 p-4 rounded-lg">
 
             <AlertTitle className="text-lg font-semibold text-orange-800 tracking-wide">
               No PDFs Found
