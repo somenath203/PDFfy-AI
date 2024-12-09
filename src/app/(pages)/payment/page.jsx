@@ -22,6 +22,12 @@ const Page = () => {
 
   const { user } = useUser();
 
+  if (!user) {
+
+    return null;
+    
+  }
+
   
   const upgradeUserAccountToPremiumMutation = useMutation(api.user.updateUserPlanOnPayment);
 

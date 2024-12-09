@@ -23,6 +23,12 @@ const Page = () => {
 
   const { user } = useUser();
 
+  if (!user) {
+
+    return null;
+    
+  }
+
 
   const allPDFOfCurrentlyLoggedInUser = useQuery(api.pdfFileStorage.getAllPDFFilesUploadedByCurrentlyLoggedInUser, {
     emailOfTheCurrentlyLoggedInUser: user?.emailAddresses[0]?.emailAddress

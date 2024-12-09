@@ -1,11 +1,12 @@
 'use client';
 
 import Link from "next/link";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 import { FaRegFilePdf } from "react-icons/fa6";
 import { AiOutlineFilePdf } from "react-icons/ai";
 import { LuBookOpen } from "react-icons/lu";
 import { IoSparklesOutline } from "react-icons/io5";
-import { UserButton, useUser } from "@clerk/nextjs";
+import { SignOutButton, useUser } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -34,7 +35,11 @@ const Page = () => {
 
           <div className="space-x-4">
 
-            {user ? <UserButton /> : <Link href='/sign-in'>
+            {user ? <SignOutButton redirectUrl='/'>
+
+              <RiLogoutCircleRLine className='text-2xl cursor-pointer' />
+
+            </SignOutButton> : <Link href='/sign-in'>
 
               <Button className="bg-black text-white hover:bg-gray-800">
                 Sign In

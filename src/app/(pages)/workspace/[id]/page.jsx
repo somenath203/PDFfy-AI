@@ -3,6 +3,7 @@
 import { useQuery } from 'convex/react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import { useUser } from '@clerk/nextjs';
 
 import Dashboardlayout from '@/app/_components/Dashboardlayout';
 import PDFViewer from '@/app/_components/PDFViewer';
@@ -12,6 +13,15 @@ import { Button } from '@/components/ui/button';
 
 
 const Page = () => {
+
+
+  const { user } = useUser();
+
+  if (!user) {
+
+    return null;
+    
+  }
 
 
   const { id } = useParams();

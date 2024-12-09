@@ -1,10 +1,11 @@
 'use client';
 
-import { UserButton } from "@clerk/nextjs";
+import { SignOutButton } from '@clerk/nextjs'
 import { FaRegFilePdf } from "react-icons/fa6";
 import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { useEffect } from "react";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 
 import Sidebar from "./Sidebar";
 import { api } from "../../../convex/_generated/api";
@@ -64,7 +65,11 @@ const Header = () => {
 
       </div>
 
-      <UserButton />
+      <SignOutButton redirectUrl='/'>
+
+        <RiLogoutCircleRLine className='text-2xl cursor-pointer' />
+
+      </SignOutButton>
 
     </nav>
   )
