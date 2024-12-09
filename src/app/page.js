@@ -7,6 +7,8 @@ import { AiOutlineFilePdf } from "react-icons/ai";
 import { LuBookOpen } from "react-icons/lu";
 import { IoSparklesOutline } from "react-icons/io5";
 import { SignOutButton, useUser } from "@clerk/nextjs";
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,6 +18,18 @@ const Page = () => {
 
 
   const { user } = useUser();
+
+  const router = useRouter();
+
+
+  const handleLogoutUser = () => {
+
+    router.push('/');
+    
+    toast.success('you have been logged out successfully');
+
+
+  }
 
 
   return (
@@ -37,9 +51,9 @@ const Page = () => {
 
             {user ? <SignOutButton redirectUrl='/'>
 
-              <RiLogoutCircleRLine className='text-2xl cursor-pointer' />
+                <RiLogoutCircleRLine className='text-2xl cursor-pointer' onClick={handleLogoutUser} />
 
-            </SignOutButton> : <Link href='/sign-in'>
+              </SignOutButton> : <Link href='/sign-in'>
 
               <Button className="bg-black text-white hover:bg-gray-800">
                 Sign In

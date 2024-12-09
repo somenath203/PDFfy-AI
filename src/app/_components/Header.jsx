@@ -6,6 +6,8 @@ import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { useEffect } from "react";
 import { RiLogoutCircleRLine } from "react-icons/ri";
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 import Sidebar from "./Sidebar";
 import { api } from "../../../convex/_generated/api";
@@ -16,7 +18,20 @@ const Header = () => {
   
   const { user } = useUser();
 
+  const router = useRouter();
+
+
   const userMutation = useMutation(api.user.createUser);
+
+
+  const handleLogoutUser = () => {
+
+    router.push('/');
+    
+    toast.success('you have been logged out successfully');
+
+
+  }
 
 
   const handleUserInDB = async () => {
@@ -67,7 +82,7 @@ const Header = () => {
 
       <SignOutButton redirectUrl='/'>
 
-        <RiLogoutCircleRLine className='text-2xl cursor-pointer' />
+        <RiLogoutCircleRLine className='text-2xl cursor-pointer' onClick={handleLogoutUser} />
 
       </SignOutButton>
 
